@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import environ
+import django_heroku
 import os
 from pathlib import Path
 
@@ -178,3 +179,5 @@ if not DEBUG:
 
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
+
+django_heroku.settings(databases=False, test_runner=False, allowed_hosts=False, logging=False, secret_key=False)
