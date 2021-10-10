@@ -51,11 +51,8 @@ class Contestant(models.Model):
 
 
 class Problem(models.Model):
-    number = models.IntegerField(
+    number = models.AutoField(
         primary_key=True,
-        editable=False,
-        validators=[validators.MinValueValidator(1),
-                    validators.MaxValueValidator(4)],
     )
     prompt = models.TextField(
         blank=True,
