@@ -35,9 +35,9 @@ if DEBUG:
     INTERNAL_IPS = ["127.0.0.1"]
 
 if DEBUG:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "integration-bee.herokuapp.com", "integration.archim.org.uk"]
 else:
-    ALLOWED_HOSTS = ["integration-bee.herokuapp.com", "integration-bee.herokuapp.com"]
+    ALLOWED_HOSTS = ["integration-bee.herokuapp.com", "integration.archim.org.uk"]
 
 
 # Application definition
