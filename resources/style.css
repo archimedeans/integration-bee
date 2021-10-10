@@ -42,10 +42,18 @@ hr {
   -moz-background-size: cover;
   -o-background-size: cover;
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.splash-item {
+  margin: auto;
 }
 
 .splash-header {
-  font-size: 300%;
+  font-size: 5rem;
   font-family: "Cardo";
   line-height: 130%;
 }
@@ -54,12 +62,14 @@ hr {
   font-size: 150%;
 }
 .splash-end {
-  position: absolute;
-  bottom: 3vh;
-  left: 50%;
-  margin-left: -150px;
+  /* position: absolute; */
+  /* bottom: 3vh; */
+  /* left: 50%; */
+  /* margin-left: -150px; */
   width: 300px;
   font-size: 125%;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
 }
 .splash-end .down-button {
   padding-top: 18px;
