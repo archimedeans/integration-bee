@@ -11,11 +11,9 @@ from django.urls import reverse
 
 
 class Contestant(models.Model):
-    contestant_id = models.IntegerField(
+    contestant_id = models.AutoField(
         primary_key=True,
         editable=False,
-        validators=[validators.MinValueValidator(200000),
-                    validators.MaxValueValidator(999999)],
         verbose_name='Contestant ID',
     )
     contestant_user = models.OneToOneField(
