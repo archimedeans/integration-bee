@@ -1,0 +1,147 @@
+/* General */
+body {
+  background-color: #f8f8ff;
+  font-family: "CMUBrightRoman";
+  font-size: 160%;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+#main {
+  padding-top: 60px;
+  margin-bottom: 15px;
+}
+#main p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 550px;
+}
+h1 {
+  margin-bottom: 1em;
+  font-family: "Corda";
+  padding-top: 2.5em;
+  margin-top: -2.5em;
+}
+hr {
+  width: 300px;
+  border-top: 1px solid #333;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+/* Splash */
+.splash {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+
+  padding-top: 35vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("bogdan-todoran-vC4OEsRVwzs-unsplash.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  color: white;
+}
+.splash-header {
+  font-size: 300%;
+  font-family: "Cardo";
+  line-height: 130%;
+}
+.splash-small {
+  margin-top: 8vh;
+  font-size: 150%;
+}
+.splash-end {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  margin-left: -150px;
+  width: 300px;
+  font-size: 120%;
+}
+.splash-end .down-button {
+  padding-top: 18px;
+  width: 40px;
+}
+@media (max-width: 750px) {
+  .splash-header {
+    font-size: 150%;
+  }
+  .splash-small,
+  .splash-end {
+    font-size: 100%;
+  }
+}
+
+/* Food customization */
+@media (min-width: 751px) {
+  #food .row {
+    font-size: 80%;
+  }
+}
+#main #food h2 {
+  margin-top: 1.5em;
+}
+#main #food h3 {
+  font-size: 150%;
+}
+
+/* Ticketing customization */
+#purchase-button {
+  margin-top: 1em;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+#purchase-button:hover {
+  background-color: #333;
+}
+/* Contact customization */
+#contact img {
+  width: 40px;
+  margin-bottom: 8px;
+}
+.contact-items {
+  margin-top: 1.5em;
+}
+@media (min-width: 751px) {
+  .contact-items {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  }
+}
+/* Navigation bar */
+.navbar {
+  background-color: #0080ff;
+  /* background-color: rgba(28, 28, 28, 0.95); */
+  font-family: "Cardo", serif;
+  border-bottom: none;
+}
+.navbar .navbar-nav li a,
+.navbar .navbar-nav li a:hover,
+.navbar .navbar-nav li a:focus {
+  color: #fff;
+}
+.navbar-default .navbar-toggle {
+  border: none;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #bbb;
+}
+.navbar-default .navbar-toggle:focus .icon-bar,
+.navbar-default .navbar-toggle:hover .icon-bar {
+  background-color: #eee;
+}
+.navbar-brand {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.navbar-brand img {
+  height: 100%;
+}
