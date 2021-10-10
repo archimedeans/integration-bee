@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block title %}{% block head_title %}{% endblock %} - Cambridge Integration Bee{% endblock %}
+
+{% block navbar %}
+{% include "./navbar.html" %}
+{% endblock %}
+
+{% block main %}
+<div class="row g-4">
+    <div class="col-lg-9">
+        <h1 class="mb-3">{% block content_title %}{% endblock %}</h1>
+
+        {% block content %}{% endblock %}
+
+        {% if is_paginated %}
+        <div class="mt-3">
+            {% include 'pagination.html' %}
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-lg-3 pt-lg-3">
+        {% include "./clock.html" %}
+    </div>
+</div>
+{% endblock %}

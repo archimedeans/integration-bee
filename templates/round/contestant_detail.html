@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Contestant: {{ contestant.fl_name }}{% endblock %}
+{% block content_title %}Contestant: {{ contestant.fl_name }}{% endblock %}
+
+{% block content %}
+
+<p><strong>Contestant ID:</strong> {{ contestant.contestant_id }}</p>
+
+<div>
+    <h4>Submissions</h4>
+
+    {% for submission in contestant.submissions.all %}
+    <hr>
+    <p class="
+        {% if submission.status == submission.Status.ATTEMPTED %}
+            text-warning
+        {% elif submission.status == submission.Status.MARKED %}
+            text-success
+        {% else %}
+            text-muted
+        {% endif %}">
+        {{ submission.get_status_display }}
+    </p>
+    <p><strong>Problem:</strong> {{ submission.problem.number }}</p>
+    {% if submission.status != 'DNA' %}
+    <p class="text-muted"><strong>Submission time:</strong> {{ submission.submission_time }}</p>
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

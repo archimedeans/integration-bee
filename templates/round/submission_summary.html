@@ -1,0 +1,54 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Submission summary{% endblock %}
+{% block content_title %}Submission summary{% endblock %}
+
+{% block content %}
+
+<p><strong>Contestant ID</strong>: {{ user.contestant.contestant_id }}</p>
+<p><strong>Name</strong>: {{ user.contestant.fl_name }}</p>
+
+{% if not submission_open %}
+<p>When submission is open, links for uploading solutions will be available in the table below.</p>
+{% endif %}
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Problem</th>
+                <th>Status</th>
+                <th>Submission time (GMT)</th>
+                <th>Action(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in submission_list %}
+            <tr>
+                <th style="text-align: center;">{{ submission.problem.number }}</td>
+                    <!-- ISSUE: avoid hard-coded status checks? -->
+                <td class="
+                    {% if submission.status == submission.Status.NOT_ATTEMPTED %}
+                        text-warning
+                    {% elif submission.status == submission.Status.ATTEMPTED %}
+                        text-success
+                    {% else %}
+                        text-body
+                    {% endif %}">
+                    {{ submission.get_status_display }}
+                </td>
+                <td>{{ submission.submission_time|date:"d N Y, H:i:s"|default:"--" }}</td>
+                <td>
+                    {% if submission.status != 'DNA' %}<a href="{{ submission.solution.url }}" target="_blank">View
+                        submission</a>{% endif %}
+                    {% if submission_open %}<a href="{% url 'submit_sol_for_problem' submission.problem.number %}">
+                        {% if submission.status == 'DNA' %}Upload solution{% else %}Re-upload solution{% endif %}
+                    </a>{% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

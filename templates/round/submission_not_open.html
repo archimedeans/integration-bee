@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Submission not open{% endblock %}
+{% block content_title %}Submission not open{% endblock %}
+
+{% block content %}
+
+<p>If you have been redirected to this page, it is likely because either Round Two has not started or submission has already closed.</p>
+
+<p>If you believe you are seeing this page in error, try following the links on the <a href="{% url 'submission_summary' %}">submission summary page</a>. Should the problem persist, please contact us using the details provided on the homepage.</p>
+
+<a href="{% url 'index' %}">Home</a>
+
+{% endblock %}

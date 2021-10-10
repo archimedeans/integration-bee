@@ -1,0 +1,38 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Problems{% endblock %}
+{% block content_title %}Problems{% endblock %}
+
+{% block content %}
+
+{% if not reveal %}
+
+<p>The problems will be shown here once Round Two starts.</p>
+
+<p>A PDF version of the contest paper will also be available for download.</p>
+
+{% endif %}
+
+{% if reveal or perms.round.mark_solutions %}
+
+{% if perms.round.mark_solutions and not reveal %}
+<p><em>The remainder of the page is visible to markers only:</em></p>
+{% endif %}
+
+<p>Download the PDF: <a
+        href="/media/paper/130dee6ee428cc9d9c7b87098c3c427f354e1dd0d36456b13a7c0bd899f9dd07/ICMC_4_2_Paper.pdf">ICMC_4_2_Paper.pdf</a>
+</p>
+
+{% for problem in problem_list %}
+<div class="mb-4">
+    <h4>{{ problem }}</h4>
+    {{ problem.prompt|safe }}
+</div>
+{% endfor %}
+
+<!-- MathJax -->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+#navigationBar {
+  background-color: #0080ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "EB Garamond", serif;
+}
+
+.font-eb-garamond {
+  font-family: "EB Garamond", serif;
+}
+
+#navigationBar .font-eb-garamond {
+  padding-bottom: 1pt;
+}
+
+#navigationBar .font-eb-garamond img {
+  height: 1em;
+  margin-bottom: 5pt;
+}
+
+/* .font-josefin-sans {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#navigationBar .font-josefin-sans {
+    padding-bottom: 1pt;
+}
+
+#navigationBar .font-josefin-sans img {
+    height: 1em;
+    margin-bottom: 5pt;
+} */
+
+#clockDisplay {
+  background-color: #f9e79f;
+  text-align: center;
+}

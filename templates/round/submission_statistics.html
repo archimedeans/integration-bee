@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Submission statistics{% endblock %}
+{% block content_title %}Submission statistics{% endblock %}
+
+{% block content %}
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Number of contestants: {{ num_contestants }}</li>
+    {% for problem, count in num_attempts %}
+    <li class="list-group-item">Number of attempts for Problem {{ problem }}: {{ count }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

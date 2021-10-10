@@ -1,0 +1,57 @@
+{% extends "navbar.html" %}
+
+{% load static %}
+
+
+
+{% block navbar_nav %}
+{% if user.is_authenticated %}
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    {% if user.is_staff %}
+    <li class="nav-item">
+        {% if "/admin/" in request.path %}
+        <a class="nav-link active" href="/admin">Admin</a>
+        {% else %}
+        <a class="nav-link" href="/admin">Admin</a>
+        {% endif %}
+    </li>
+    {% endif %}
+
+    <li class="nav-item">
+        {% if "/problems/" in request.path %}
+        <a class="nav-link active" href="{% url 'problems' %}">Problems</a>
+        {% else %}
+        <a class="nav-link" href="{% url 'problems' %}">Problems</a>
+        {% endif %}
+    </li>
+
+    {% if perms.round.submit_solutions and not user.is_superuser %}
+    <li class="nav-item">
+        {% if "/submission/" in request.path or "/submit/" in request.path %}
+        <a class="nav-link active" href="{% url 'submission_summary' %}">Submission</a>
+        {% else %}
+        <a class="nav-link" href="{% url 'submission_summary' %}">Submission</a>
+        {% endif %}
+    </li>
+    {% endif %}
+
+    {% if perms.round.mark_solutions %}
+    <li class="nav-item">
+        {% if "/submission-statistics/" in request.path %}
+        <a class="nav-link active" href="{% url 'submission_statistics' %}">Statistics</a>
+        {% else %}
+        <a class="nav-link" href="{% url 'submission_statistics' %}">Statistics</a>
+        {% endif %}
+    </li>
+
+    <li class="nav-item">
+        {% if "/contestants/" in request.path or "/contestant/" in request.path %}
+        <a class="nav-link active" href="{% url 'contestants' %}">Contestants</a>
+        {% else %}
+        <a class="nav-link" href="{% url 'contestants' %}">Contestants</a>
+        {% endif %}
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
+{% endblock %}

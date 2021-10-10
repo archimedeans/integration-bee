@@ -1,0 +1,85 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Submit a solution for {{ submission.problem }}{% endblock %}
+{% block content_title %}Submit a solution for {{ submission.problem }}{% endblock %}
+
+{% block content %}
+
+<div class="row g-3 mb-3">
+    <div class="col-md-auto">
+        <div class="fw-light">Contestant ID</div>
+        <div>{{ submission.contestant.contestant_id }}</div>
+    </div>
+    <div class="col-md-auto">
+        <div class="fw-light">Contestant name</div>
+        <div>{{ submission.contestant.fl_name }}</div>
+    </div>
+    <div class="col-md-auto">
+        <div class="fw-light">Problem</div>
+        <div>{{ submission.problem.number }}</div>
+    </div>
+    <div class="col-md-auto">
+        <div class="fw-light">Current status</div>
+        <div>{{ submission.get_status_display }}</div>
+    </div>
+    <div class="col-md-auto">
+        <div class="fw-light">Last submitted (GMT):</div>
+        <div>{{ submission.submission_time|date:"d N Y, H:i:s"|default:"--" }}</div>
+    </div>
+    {% if submission.status != 'DNA' %}
+    <div class="col-md-12">
+        <div class="fw-light">Current submission:</div>
+        <div><a href="{{ submission.solution.url }}" target="_blank">
+                {{ submission.solution.name|slice:"82:" }}</a></div>
+    </div>
+    {% endif %}
+</div>
+
+
+<form enctype="multipart/form-data" action="" method="post" onsubmit="disableSubmitInput()">
+    {% csrf_token %}
+    <!-- https://docs.djangoproject.com/en/3.1/topics/forms/#rendering-fields-manually -->
+    <div class="mb-3">
+        <label for="solutionInput" class="form-label fw-light">{{ form.solution.label }}</label>
+        {{ form.solution }}
+        <div class="form-text">{{ form.solution.help_text }}</div>
+        {% if form.solution.errors %}
+        <div id="solutionValidationFeeback" class="invalid-feedback">
+            <ul class="list-unstyled mb-0">
+                {% for error in form.solution.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if form.non_field_errors %}
+    <div class="mb-3 text-danger">
+        <ul class="list-unstyled mb-0">
+            {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="row g-2 justify-content-md-end" dir="rtl">
+        <div class="col-md-3" dir="ltr">
+            <input type="submit" id="submitInput" class="btn btn-primary w-100" value="Submit">
+        </div>
+        <div class="col-md-2" dir="ltr">
+            <a class="btn btn-secondary w-100" href="{% url 'submission_summary' %}">Go back</a>
+        </div>
+    </div>
+</form>
+
+<script>
+    function disableSubmitInput() {
+        var input = document.getElementById('submitInput');
+        input.disabled = true;
+        input.value = 'Uploading...';
+    }
+</script>
+
+{% endblock %}

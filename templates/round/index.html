@@ -1,0 +1,157 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Welcome{% endblock %}
+{% block content_title %}Welcome{% endblock %}
+
+{% block content %}
+
+<p>Welcome to the official contest website for Round Two of the 4th ICMC!</p>
+
+<p><strong>If you have not yet done so, please log in and <a href="{% url 'password_change' %}">change your
+            password</a>.</strong></p>
+
+<p>Round Two will run during 14:00–17:00, 28 February 2021, GMT, with submission closing at 17:30 GMT.
+    <strong>There is an embargo until 18:00, 28 February 2021, GMT.</strong>
+    Please review the <a href="#contest-details">"Contest details" section</a> below for more information on the format,
+    timing and rules of the contest. Technical information such as how to use the website is available in the <a
+        href="#technical-info">"Technical information" section</a>.
+</p>
+
+<p><a href="https://icmathscomp.org/pages/past-papers.html">Past papers</a> are available on our <a
+        href="https://icmathscomp.org">static-content website</a>, as always.</p>
+
+<h2>Contact information</h2>
+
+<p>If you encounter technical difficulties on the website at any point or wish to ask a question about the problems
+    during the contest, please don't hesitate to contact us using <a href="{% url 'contact_form' %}">our web form</a>
+    (log-in required) or by email at <a href="mailto:contest@icmathscomp.org">contest@icmathscomp.org</a>.</p>
+
+<h2 id="contest-details">Contest details</h2>
+
+<div class="accordion accordion-flush mb-3" id="contestDetailsAccordion">
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="contestTimingHeader">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#contestTimingBody" aria-expanded="false" aria-controls="contestTimingBody">
+                Format and timing
+            </button>
+        </h3>
+        <div id="contestTimingBody" class="accordion-collapse collapse" aria-labelledby="contestTimingHeader"
+            data-bs-parent="#contestDetailsAccordion">
+            <div class="accordion-body">
+                <p>This is a closed-book competition. You will have 3 hours to solve 4 problems, arranged roughly in
+                    order of difficulty. Each problem carries 10 marks.</p>
+
+                <p>The competition will run during 14:00–17:00, 28 February 2021, GMT.
+                    <strong>There is an embargo until 18:00, 28 February 2021, GMT.</strong>
+                </p>
+
+                <p>You may choose to type up your solutions in a word processor or TeX editor, but there is no
+                    requirement to do so.</p>
+
+                <p>At 17:00 GMT, you must stop writing and/or typing and begin preparing your scripts for online
+                    submission. You will have 30 minutes after the competition to upload your solutions.
+                    Please upload a separate PDF file (up to 5 MB) for each problem you have attempted.
+                    Any uploads made after 30 minutes are not guaranteed to be accepted, and we <em>cannot</em> accept
+                    any submissions made after the embargo is over.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="rulesHeader">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#rulesBody" aria-expanded="false" aria-controls="rulesBody">
+                Rules
+            </button>
+        </h3>
+        <div id="rulesBody" class="accordion-collapse collapse" aria-labelledby="rulesHeader"
+            data-bs-parent="#contestDetailsAccordion">
+            <div class="accordion-body">
+                <ul>
+                    <li>As far as possible, the exam should be taken under test conditions, in a quiet room, with only
+                        the permitted materials and a printout of the contest paper if desired.</li>
+                    <li>Participants are permitted to use a pen, pencil, highlighter and/or other writing implements, as
+                        well as a ruler and compass.</li>
+                    <li>Participants are allowed to use an electronic device only for the purposes of accessing the
+                        contest website, writing an email to contest@icmathscomp.org for the purpose of clarification,
+                        or typing their solutions in a word processor or TeX editor.</li>
+                    <li>Please make sure you write your Contestant ID on every page. Do not include other personally
+                        identifiable information such as your name.</li>
+                    <li>The following are prohibited: calculators of any kind; protractors, set squares, or other
+                        geometric tools; books, scripts, documents, websites or other resources; communication with
+                        others, particularly online.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="technical-info">Technical information</h2>
+
+<div class="accordion accordion-flush mb-3" id="technicalInfoAccordion">
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="usingTheWebsiteHeader">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#usingTheWebsiteBody" aria-expanded="false" aria-controls="usingTheWebsiteBody">
+                Using the website
+            </button>
+        </h3>
+        <div id="usingTheWebsiteBody" class="accordion-collapse collapse" aria-labelledby="usingTheWebsiteHeader"
+            data-bs-parent="#technicalInfoAccordion">
+            <div class="accordion-body">
+                <p>Contestants can log in with their user credentials by following the "Log in" link in the menu bar (on
+                    devices with a smaller screen, you may need to toggle a button in the top-right corner to see the
+                    link).</p>
+
+                <p>Contestants who have logged in will see links reading "Problems" and "Submission" in the menu bar,
+                    which will take you to the corresponding pages.</p>
+
+                <p>The "Problems" page is where the problems will be displayed once the contest starts.</p>
+
+                <p>The "Submission" link will take you to the "Submission summary" page, where you can see the
+                    submission
+                    status for each problem. After the contest has started and before submission closes, links for
+                    uploading and re-uploading your solutions will be available on the page. There will also be links
+                    to the PDFs you have uploaded.</p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="browserCompatibilityHeader">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#browserCompatibilityDetails" aria-expanded="false"
+                aria-controls="browserCompatibilityDetails">
+                Browser compatibility
+            </button>
+        </h3>
+        <div id="browserCompatibilityDetails" class="accordion-collapse collapse"
+            aria-labelledby="browserCompatibilityHeader" data-bs-parent="#technicalInfoAccordion">
+            <div class="accordion-body">
+                <p>This website has been tested in the latest versions of Chrome, Edge and Firefox. It may also work as
+                    intended in other modern browsers. It is unlikely to work in Internet Explorer.</p>
+
+                <p>If you are a contestant and you believe you have encountered any technical issues without immediate
+                    solutions, please get in touch with us using the contact details above as soon as possible.</p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="cookiesHeader">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#cookiesDetails" aria-expanded="false" aria-controls="cookiesDetails">
+                Cookies
+            </button>
+        </h3>
+        <div id="cookiesDetails" class="accordion-collapse collapse" aria-labelledby="cookiesHeader"
+            data-bs-parent="#technicalInfoAccordion">
+            <div class="accordion-body">
+                <p>This website uses session cookies for user authentication and security purposes. They are stored on
+                    your device so that this website can identify you (or more precisely, your browser instance) as a
+                    previous visitor to the website and keep track of the website user you have logged in as.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

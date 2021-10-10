@@ -1,0 +1,17 @@
+<div id="clockDisplay" class="bg-gradient pt-2 pb-3 px-3">
+    <div id="liveClock">
+        <span id="liveClockHours">
+            <span id="liveClockHoursNumber" class="fs-1"></span><span id="liveClockHoursUnit" class="fs-3">h </span>
+        </span>
+        <span id="liveClockMinutes">
+            <span id="liveClockMinutesNumber" class="fs-1"></span><span id="liveClockMinutesUnit" class="fs-3">m </span>
+        </span>
+        <span id="liveClockSeconds">
+            <span id="liveClockSecondsNumber" class="fs-1"></span><span id="liveClockSecondsUnit" class="fs-3">s </span>
+        </span>
+    </div>
+    <div id="liveClockDescription"></div>
+</div>
+
+{% load static %}
+<script src="{% static 'javascript/round/clock.js' %}"></script>

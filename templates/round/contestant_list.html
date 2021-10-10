@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+
+{% block head_title %}Contestant List{% endblock %}
+{% block content_title %}Contestant List{% endblock %}
+
+{% block content %}
+
+{% if contestant_list %}
+<ul>
+    {% for contestant in contestant_list %}
+    <li>
+        ({{contestant.contestant_id}}) <a href="{{ contestant.get_absolute_url }}">{{ contestant.fl_name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>There are no contestants in this round.</p>
+{% endif %}
+
+{% endblock %}
