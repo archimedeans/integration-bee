@@ -37,6 +37,7 @@ hr {
   padding-top: 35vh;
   background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
     url("bogdan-todoran-vC4OEsRVwzs-unsplash.jpg") no-repeat center center fixed;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
