@@ -59,7 +59,7 @@ hr {
   left: 50%;
   margin-left: -150px;
   width: 300px;
-  font-size: 120%;
+  font-size: 125%;
 }
 .splash-end .down-button {
   padding-top: 18px;
@@ -67,11 +67,11 @@ hr {
 }
 @media (max-width: 750px) {
   .splash-header {
-    font-size: 150%;
+    font-size: 250%;
   }
   .splash-small,
   .splash-end {
-    font-size: 100%;
+    font-size: 125%;
   }
 }
 
@@ -145,4 +145,8 @@ hr {
 }
 .navbar-brand img {
   height: 100%;
+}
+
+.sponsor-img {
+  max-width: 300px;
 }
