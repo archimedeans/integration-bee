@@ -151,7 +151,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/django/deployment/static'  # for deployment only
+STATIC_ROOT = BASE_DIR / 'collected' 
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
