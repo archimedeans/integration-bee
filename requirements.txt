@@ -1,3 +1,5 @@
 Django==3.2.7
 django-upload-validator==1.1.5
+django-environ==0.7.0
 requests==2.26.0
+psycopg2-binay==2.9.1
